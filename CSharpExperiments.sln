@@ -6,6 +6,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwaitException.Project", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwaitExpception.Test", "AwaitExpception.Test\AwaitExpception.Test.csproj", "{19FD766C-8568-4803-9824-712BEB90DEDA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RethrowException", "RethrowException", "{F62BAED0-ED35-4742-8BAC-BC8F334DD00F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RethrowException.Project", "RethrowException.Project\RethrowException.Project.csproj", "{3846F220-804F-42E9-968B-0207BD8F04FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RethrowException.Test", "RethrowException.Test\RethrowException.Test.csproj", "{FB6E93F6-0D2B-44E9-B2B5-0B63BBD88711}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +20,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{ACCF7609-B82F-492F-BE0C-45A66D21EFF7} = {582C03FA-5F79-4EF2-91DE-64C115801C68}
 		{19FD766C-8568-4803-9824-712BEB90DEDA} = {582C03FA-5F79-4EF2-91DE-64C115801C68}
+		{3846F220-804F-42E9-968B-0207BD8F04FF} = {F62BAED0-ED35-4742-8BAC-BC8F334DD00F}
+		{FB6E93F6-0D2B-44E9-B2B5-0B63BBD88711} = {F62BAED0-ED35-4742-8BAC-BC8F334DD00F}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{ACCF7609-B82F-492F-BE0C-45A66D21EFF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,5 +32,13 @@ Global
 		{19FD766C-8568-4803-9824-712BEB90DEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19FD766C-8568-4803-9824-712BEB90DEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19FD766C-8568-4803-9824-712BEB90DEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3846F220-804F-42E9-968B-0207BD8F04FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3846F220-804F-42E9-968B-0207BD8F04FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3846F220-804F-42E9-968B-0207BD8F04FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3846F220-804F-42E9-968B-0207BD8F04FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB6E93F6-0D2B-44E9-B2B5-0B63BBD88711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB6E93F6-0D2B-44E9-B2B5-0B63BBD88711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB6E93F6-0D2B-44E9-B2B5-0B63BBD88711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB6E93F6-0D2B-44E9-B2B5-0B63BBD88711}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
