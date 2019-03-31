@@ -13,6 +13,9 @@ namespace Test
             var thrower = new ExceptionThrower();
             // the exception is thrown when we await
             Assert.ThrowsAsync<AwaitException>(async () => await thrower.DelayAndThrow(5));
+
+            // make sure the method was called ok
+            Assert.True(thrower.AwaitCompleted);
         }
 
         [Test]
@@ -27,6 +30,9 @@ namespace Test
 
             // wait for the test to finish
             await Task.Delay(10);
+
+            // make sure we have waited long enough
+            Assert.True(thrower.AwaitCompleted);
         }
     }
 }
