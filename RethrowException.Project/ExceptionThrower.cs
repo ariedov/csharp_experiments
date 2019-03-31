@@ -24,9 +24,29 @@ namespace RethrowException.Project
             throw new RethrowException();
         }
 
-        public void Rethrow(Exception exception)
+        public void RethrowExplicitly()
         {
-            throw exception;
+            try
+            {
+                CreateTraceAndThrow();
+            }
+            catch (RethrowException e)
+            {
+                throw e;
+            }
+        }
+
+        public void Rethrow()
+        {
+            try
+            {
+                CreateTraceAndThrow();
+            }
+            catch (RethrowException e)
+            {
+                Console.WriteLine(e.ToString());
+                throw;
+            }
         }
     }
 }

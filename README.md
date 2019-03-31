@@ -14,4 +14,7 @@ Turns out if just run an `async` method without `await` and an exception occurs 
 
 The question is: how the stack trace is affected if we throw an exception, catch it for logging and then rethrow.
 
-The answer: the rethrown exception is having its own stack trace and knows nothing about the previous one.
+The answer:
+ 
+1. If the exception is rethrown explicitly via `throw exception;` the stack trace is erased.
+2. If the exception is rethrown via `throw;` the stacktrace is preserved.

@@ -33,37 +33,40 @@ namespace RethrowException.Test
         }
 
         [Test]
-        public void TestRethrowExceptionTrace()
+        public void TestRethrowExplicitlyExceptionTrace()
         {
             var thrower = new ExceptionThrower();
 
-            var exception = CreateThrownException(thrower);
             try
             {
-                thrower.Rethrow(exception);
+                thrower.RethrowExplicitly();
             }
             catch (Project.RethrowException e)
             {
                 var trace = new StackTrace(e, true);
                 
-                // the initial trace was 5 frames, but after rethrow it contains only the caller method = 1
-                Assert.AreEqual(1, trace.FrameCount);   
+                // the initial trace was 5 frames, but after rethrow it contains only the caller method + test = 2
+                Assert.AreEqual(2, trace.FrameCount);   
             }
         }
-
-        private static Project.RethrowException CreateThrownException(ExceptionThrower thrower)
+        
+        [Test]
+        public void TestRethrowHiddenExceptionTrace()
         {
+            var thrower = new ExceptionThrower();
+
             Project.RethrowException exception = null;
             try
             {
-                thrower.CreateTraceAndThrow();
+                thrower.Rethrow();
             }
             catch (Project.RethrowException e)
             {
-                exception = e;
+                var trace = new StackTrace(e, true);
+                
+                // the initial trace was 5 frames, after rethrow it adds the rethrow method
+                Assert.AreEqual(6, trace.FrameCount);
             }
-
-            return exception;
         }
     }
 }
