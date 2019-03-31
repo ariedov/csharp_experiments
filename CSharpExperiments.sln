@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AwaitException", "AwaitException", "{582C03FA-5F79-4EF2-91DE-64C115801C68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwaitException.Project", "AwaitException.Project\AwaitException.Project.csproj", "{ACCF7609-B82F-492F-BE0C-45A66D21EFF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwaitExpception.Test", "AwaitExpception.Test\AwaitExpception.Test.csproj", "{19FD766C-8568-4803-9824-712BEB90DEDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ACCF7609-B82F-492F-BE0C-45A66D21EFF7} = {582C03FA-5F79-4EF2-91DE-64C115801C68}
+		{19FD766C-8568-4803-9824-712BEB90DEDA} = {582C03FA-5F79-4EF2-91DE-64C115801C68}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACCF7609-B82F-492F-BE0C-45A66D21EFF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACCF7609-B82F-492F-BE0C-45A66D21EFF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACCF7609-B82F-492F-BE0C-45A66D21EFF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACCF7609-B82F-492F-BE0C-45A66D21EFF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19FD766C-8568-4803-9824-712BEB90DEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19FD766C-8568-4803-9824-712BEB90DEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19FD766C-8568-4803-9824-712BEB90DEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19FD766C-8568-4803-9824-712BEB90DEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
