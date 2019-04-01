@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using Project;
 
@@ -33,6 +34,39 @@ namespace Test
 
             // make sure we have waited long enough
             Assert.True(thrower.AwaitCompleted);
+        }
+
+        // This test fails the process with exception, not yet found a way to run it normally as a test.
+        // Comment that out if need to run other tests
+        [Test]
+        public async Task TestExceptionThrowInAsyncVoid()
+        {
+            var thrower = new ExceptionThrower();
+            AppDomain.CurrentDomain.UnhandledException += (object sender, UnhandledExceptionEventArgs e) => 
+            {
+                // Unfortunately I haven't yet found the way to not fail here. 
+                // Looks like the exception is caught but the process fails despite of that fact
+                Console.WriteLine("The exception is actually caught globally");
+
+                // Make sure thrower finished async operation
+                Assert.True(thrower.AwaitCompleted, "Exception handled globally");
+            };
+
+            // we throw the exception and not awaiting the method
+            try 
+            {
+                thrower.VoidDelayAndThrow(5);
+            }
+            catch 
+            {
+                Console.WriteLine("The exception is actually caught locally");
+
+                // wait for the test to finish
+                await Task.Delay(10);
+
+                // make sure we have waited long enough
+                Assert.True(thrower.AwaitCompleted, "Exception handled locally");
+            }
         }
     }
 }

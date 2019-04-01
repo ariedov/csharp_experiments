@@ -16,5 +16,14 @@ namespace Project
 
             throw new AwaitException();
         }
+
+        public async void VoidDelayAndThrow(int sleepForMilliseconds)
+        {
+            await Task.Delay(sleepForMilliseconds);
+
+            awaitCompleted = true;
+
+            throw new AwaitException();
+        }
     }
 }
