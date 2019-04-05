@@ -39,7 +39,7 @@ namespace Test
         // This test fails the process with exception, not yet found a way to run it normally as a test.
         // Comment that out if need to run other tests
         [Test]
-        public async Task TestExceptionThrowInAsyncVoid()
+        public void TestExceptionThrowInAsyncVoid()
         {
             var thrower = new ExceptionThrower();
             AppDomain.CurrentDomain.UnhandledException += (object sender, UnhandledExceptionEventArgs e) => 
@@ -52,21 +52,11 @@ namespace Test
                 Assert.True(thrower.AwaitCompleted, "Exception handled globally");
             };
 
-            // we throw the exception and not awaiting the method
-            try 
-            {
-                thrower.VoidDelayAndThrow(5);
-            }
-            catch 
-            {
-                Console.WriteLine("The exception is actually caught locally");
+            // We try to assure exception is thrown here
+            Assert.Throws<AwaitException>(() => thrower.VoidDelayAndThrow(5));
 
-                // wait for the test to finish
-                await Task.Delay(10);
-
-                // make sure we have waited long enough
-                Assert.True(thrower.AwaitCompleted, "Exception handled locally");
-            }
+            // Make sure the thrower worked correctly
+            Assert.True(thrower.AwaitCompleted, "Exception handled locally");
         }
     }
 }
